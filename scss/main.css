@@ -1,7 +1,29 @@
+/*-- scss:defaults --*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 body {
-  background: blue;
+  background: #E4D6A7;
+  font-weight: 200;
 }
 
-h1, p {
-  color: white;
+p {
+  font-family: "Montserrat";
+  color: #061826;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+}
+.main .main__paragraph {
+  font-weight: 400;
+  font-style: italic;
+  color: #008080;
+}
+.main .main__h2 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+.main .main__h2:hover {
+  color: #228B22;
 }/*# sourceMappingURL=main.css.map */

@@ -1,7 +1,54 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+//colors
+$black: #061826 !default;
+$basic: #1C110A !default;
+$beige: #E4D6A7 !default;
+$red: #9B2915 !default;
+$blue: #50A2A7 !default;
+$yellow: #E9B44C !default;
+$deep-blue: #0006b1!default;
+$green: #228B22!default;
+$teal: #008080!default;
+
+$body-color: $basic;
+$headings-color: $green;
+
+$font-weights: (
+    "light": 200,
+    "regular": 400,
+    "medium": 600,
+    "bold": 800
+);
+
 body {
-    background: blue;
+    background: $beige;
+    font-weight: map-get($font-weights, light);
 }
 
-h1, p {
-    color: white;
+p {
+    font-family: "Montserrat";
+    color: $black;
+}
+
+.main{
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    #{&}__paragraph {
+        font-weight: map-get($font-weights, regular);
+        font-style: italic;
+        color: $teal;
+    }
+    #{&}__h2{
+        font-size: 2rem;
+        font-weight: map-get($font-weights, bold);
+        &:hover{
+            color: $green
+        }
+    }
+
 }
