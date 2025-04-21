@@ -1,54 +1,99 @@
 /*-- scss:defaults --*/
 
-// fonts
+@use 'functions' as f;
+@use 'variables' as v;
+//@use 'sass:map';
+
+
+@import './resets';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-//colors
-$black: #061826 !default;
-$basic: #1C110A !default;
-$beige: #E4D6A7 !default;
-$red: #9B2915 !default;
-$blue: #50A2A7 !default;
-$yellow: #E9B44C !default;
-$deep-blue: #0006b1!default;
-$green: #228B22!default;
-$teal: #008080!default;
+//Mixins are for style
+//functions compute values
 
-$body-color: $basic;
-$headings-color: $green;
 
-$font-weights: (
-    "light": 200,
-    "regular": 400,
-    "medium": 600,
-    "bold": 800
-);
+
+// fonts
+
+$body-color: v.get-color(deep-blue);
+$headings-color: v.$red;
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin transition-slow{
+    transition: all 3s ease-in-out;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
 
 body {
-    background: $beige;
-    font-weight: map-get($font-weights, light);
+    background: v.$beige;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 80%;
+    padding: 1rem;
 }
 
 p {
     font-family: "Montserrat";
-    color: $black;
+    color: v.$black;
+    font-weight: f.weight(thin);
 }
 
-.main{
+main{
+    background-color: white;
+}
+
+//div class main becase . means div
+.main {
     width: 80%;
     margin: 0 auto;
-    background-color: white;
-    #{&}__paragraph {
-        font-weight: map-get($font-weights, regular);
-        font-style: italic;
-        color: $teal;
+    background:
+        radial-gradient(
+            circle at center,
+            v.$yellow, 
+            blue, 
+            v.$teal,
+            green 100%
+        );
+    border-bottom: 5px solid v.$black;
+
+    #{&}__paragraph_1 {
+        font-weight: f.weight(bold);
+        color: v.$blue;
+
+        &:hover {
+            color: v.$red;
+            @include transition-ease;
+        }
     }
+
     #{&}__h2{
-        font-size: 2rem;
-        font-weight: map-get($font-weights, bold);
+        font-size: 4rem;
+        font-weight: weight(bold);
         &:hover{
-            color: $green
+            color: pink;
+        }
+    }
+
+    #{&}__paragraph_2 {
+        @extend .main__paragraph_1;
+        
+        &:hover{
+            color: whitesmoke;
+            @include transition-slow;
         }
     }
 
 }
+

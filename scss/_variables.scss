@@ -1,0 +1,16 @@
+
+$colors: (
+  "black": #061826,
+  "beige": #E4D6A7,
+  "red": #9B2915,
+  "light-blue": #50A2A7,
+  "yellow": #E9B44C,
+  "deep-blue": #0006b1,
+  "green": #228B22,
+  "teal": #008080
+);
+
+
+@function get-color($colors) {
+  @return map-get($colors, $colors)
+}

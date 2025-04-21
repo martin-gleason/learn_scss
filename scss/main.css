@@ -1,8 +1,20 @@
 /*-- scss:defaults --*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+}
+
 body {
   background: #E4D6A7;
-  font-weight: 200;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 80%;
+  padding: 1rem;
 }
 
 p {
@@ -10,20 +22,32 @@ p {
   color: #061826;
 }
 
+main {
+  background-color: white;
+}
+
 .main {
   width: 80%;
   margin: 0 auto;
-  background-color: white;
+  background: radial-gradient(circle at center, #E9B44C, blue, #008080, green 100%);
+  border-bottom: 5px solid #061826;
 }
-.main .main__paragraph {
-  font-weight: 400;
-  font-style: italic;
-  color: #008080;
+.main .main__paragraph_1, .main .main__paragraph_2 {
+  font-weight: 800;
+  color: #50A2A7;
+}
+.main .main__paragraph_1:hover, .main .main__paragraph_2:hover {
+  color: #9B2915;
+  transition: all 0.5s ease-in-out;
 }
 .main .main__h2 {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 4rem;
+  font-weight: weight(bold);
 }
 .main .main__h2:hover {
-  color: #228B22;
+  color: pink;
+}
+.main .main__paragraph_2:hover {
+  color: whitesmoke;
+  transition: all 3s ease-in-out;
 }/*# sourceMappingURL=main.css.map */
